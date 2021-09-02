@@ -37,16 +37,7 @@ const clockText = () =>{
         month = date.getMonth(),
         year = date.getFullYear()
 
-    // We change the hours from 24 to 12 hours and establish whether it is AM or PM
-    if(hh >= 12){
-        hh = hh - 12
-        ampm = 'PM'
-    }else{
-        ampm = 'AM'
-    }
-
-    // We detect when it's 0 AM and transform to 12 AM
-    if(hh == 0){hh = 12}
+    if(hh == 0){hh = 24}
 
     // Show a zero before hours
     if(hh < 10){hh = `0${hh}`}
@@ -59,9 +50,6 @@ const clockText = () =>{
     
     // Show minutes
     textMinutes.innerHTML = mm
-
-    // Show am or pm
-    textAmPm.innerHTML = ampm
 
     // If you want to show the name of the day of the week
     // let week = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat']
